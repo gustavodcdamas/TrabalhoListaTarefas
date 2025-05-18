@@ -7,8 +7,16 @@
   font-family: 'Poppins';
 	/* Remove o espaçamento interno de todos os lados do elemento. */
 	padding: 0;
-  align-items: center;
-  justify-content: center;
 	/* Inclui o preenchimento e a borda na largura e altura. */
 	box-sizing: border-box;
+}
+
+body {
+
+	flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+
+	margin: 3px;
 }

@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, TarefaAtualizaComponent, TarefaNovaComponent, AsyncPipe, HomeComponent,CommonModule ],
+  imports: [RouterOutlet, HeaderComponent, HomeComponent, CommonModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

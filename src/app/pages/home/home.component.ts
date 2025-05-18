@@ -3,10 +3,14 @@ import { Router } from '@angular/router';
 import { ITarefa } from '../../models/tarefa.model';
 import { TarefaService } from '../../services/tarefa.service';
 import { CommonModule } from '@angular/common';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import { SwiperModule } from 'swiper/angular';
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule ],
+  imports: [ CommonModule, SwiperModule ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
