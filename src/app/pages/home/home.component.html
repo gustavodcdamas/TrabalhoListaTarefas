@@ -7,13 +7,19 @@
     <div class="text-center mb-4">
       <h2>Tarefas Pendentes</h2>
     </div>
-
-    <swiper
-      [slidesPerView]="1"
-      [spaceBetween]="20"
-      [breakpoints]="{ '768': { 'slidesPerView': 2 }, '992': { 'slidesPerView': 3 } }"
-      class="d-flex justify-content-center"
-    >
+      <swiper
+        [slidesPerView]="1"
+        [spaceBetween]="20"
+        [breakpoints]="{
+          '0': { slidesPerView: 1 },
+          '576': { slidesPerView: 2 },
+          '768': { slidesPerView: 2 },
+          '992': { slidesPerView: 3 }
+        }"
+        [navigation]="true"
+        [pagination]="{ clickable: true,  el: '.swiper-pagination-custom'  }"
+        class="mySwiper position-relative"
+      >
       <ng-container *ngFor="let tarefa of tarefasPendentes">
         <ng-template swiperSlide>
           <div class="card h-100">
@@ -37,7 +43,7 @@
                 </small>
               </p>
             </div>
-            <div class="card-footer d-flex justify-content-between">
+            <div class="card-footer d-flex flex-wrap gap-2">
               <button class="btn btn-sm btn-primary" (click)="editarTarefa(tarefa.id)">
                 <i class="bi bi-pencil"></i> Editar
               </button>
@@ -64,12 +70,19 @@
       <h2>Tarefas Concluídas</h2>
     </div>
 
-    <swiper
-      [slidesPerView]="1"
-      [spaceBetween]="20"
-      [breakpoints]="{ '768': { 'slidesPerView': 2 }, '992': { 'slidesPerView': 3 } }"
-      class="d-flex justify-content-center"
-    >
+      <swiper
+        [slidesPerView]="1"
+        [spaceBetween]="20"
+        [breakpoints]="{
+          '0': { slidesPerView: 1 },
+          '576': { slidesPerView: 2 },
+          '768': { slidesPerView: 2 },
+          '992': { slidesPerView: 3 }
+        }"
+        [navigation]="true"
+        [pagination]="{ clickable: true, el: '.swiper-pagination-custom'  }"
+        class="mySwiper position-relative"
+      >
       <ng-container *ngFor="let tarefa of tarefasConcluidas">
         <ng-template swiperSlide>
           <div class="card bg-light h-100">
@@ -87,9 +100,12 @@
                 </small>
               </p>
             </div>
-            <div class="card-footer d-flex justify-content-between">
+            <div class="card-footer d-flex flex-wrap gap-2">
               <button class="btn btn-sm btn-danger" (click)="excluirTarefa(tarefa.id)">
                 <i class="bi bi-trash"></i> Deletar
+              </button>
+              <button class="btn btn-sm btn-success" (click)="pendenteTarefa(tarefa.id)">
+                <i class="bi bi-trash"></i> Pendente
               </button>
             </div>
           </div>

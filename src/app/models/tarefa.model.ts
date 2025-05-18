@@ -7,6 +7,7 @@ interface ITarefa {
   prioridade: string;
   categoria: string;
   concluida?: boolean;
+  pendente?: boolean;
 };
 
 function createITarefa() {
@@ -16,7 +17,8 @@ function createITarefa() {
     data: '',
     categoria: '',
     prioridade: '',
-    concluida: false
+    concluida: false,
+    pendente: true
   };
 }
 

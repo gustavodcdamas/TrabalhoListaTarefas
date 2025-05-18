@@ -53,6 +53,14 @@
     >
       Trabalho
     </button>
+    <button
+    type="button"
+    class="btn"
+    [ngClass]="{'btn-info': tarefa.categoria === 'faculdade', 'btn-outline-info': tarefa.categoria !== 'faculdade'}"
+    (click)="selecionarCategoria('faculdade')"
+  >
+    Faculdade
+  </button>
   </div>
   <input type="hidden" [(ngModel)]="tarefa.categoria" name="categoria" required>
 </div>

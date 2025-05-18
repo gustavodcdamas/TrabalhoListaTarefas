@@ -55,6 +55,15 @@ export class TarefaService {
     const index = this.tarefas.findIndex(t => t.id === id);
     if (index !== -1) {
       this.tarefas[index].concluida = true;
+      this.tarefas[index].pendente = false;
+    }
+  }
+
+  pendenteTarefa(id: string): void {
+    const index = this.tarefas.findIndex(t => t.id === id);
+    if (index !== -1) {
+      this.tarefas[index].concluida = false;
+      this.tarefas[index].pendente = true;
     }
   }
 }

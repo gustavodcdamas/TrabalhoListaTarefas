@@ -1,4 +1,3 @@
-// src/app/pages/tarefa-nova/tarefa-nova.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITarefa, createITarefa } from '../../models/tarefa.model';

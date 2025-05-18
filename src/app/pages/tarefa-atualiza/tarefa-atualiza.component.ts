@@ -1,4 +1,3 @@
-// src/app/pages/tarefa-atualiza/tarefa-atualiza.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ITarefa, createITarefa } from '../../models/tarefa.model';
@@ -20,6 +19,8 @@ export class TarefaAtualizaComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { }
+
+  dataAtual: Date = new Date();
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');

@@ -5,6 +5,7 @@ import { TarefaAtualizaComponent } from './pages/tarefa-atualiza/tarefa-atualiza
 import { TarefaNovaComponent } from './pages/tarefa-nova/tarefa-nova.component';
 import { TarefaService } from './services/tarefa.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { HomeComponent } from './pages/home/home.component';
 
 @Component({

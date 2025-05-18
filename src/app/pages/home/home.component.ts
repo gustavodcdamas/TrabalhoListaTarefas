@@ -52,4 +52,9 @@ export class HomeComponent implements OnInit {
     this.tarefaService.marcarComoConcluida(id);
     this.carregarTarefas();
   }
+
+  pendenteTarefa(id: string): void {
+    this.tarefaService.pendenteTarefa(id);
+    this.carregarTarefas();
+  }
 }

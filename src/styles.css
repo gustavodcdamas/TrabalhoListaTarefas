@@ -11,12 +11,36 @@
 	box-sizing: border-box;
 }
 
-body {
-
-	flex-wrap: wrap;
-
-  align-items: center;
-  justify-content: center;
-
-	margin: 3px;
+.closeMenu{
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 1;
 }
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  background: #1D1D1F;
+  width: 10px;
+  height: 10px;
+  border-radius: .5rem;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #F37111;
+  width: 10px;
+  height: 10px;
+  border-radius: .5rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #F37111;
+  font-size: 30px;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+

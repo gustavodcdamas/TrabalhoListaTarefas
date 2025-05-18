@@ -7,8 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TarefaNovaComponent } from './pages/tarefa-nova/tarefa-nova.component';
 import { TarefaAtualizaComponent } from './pages/tarefa-atualiza/tarefa-atualiza.component';
-import SwiperCore from 'swiper';
 import { SwiperModule } from 'swiper/angular';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 
 
 @NgModule({
