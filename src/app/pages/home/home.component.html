@@ -1,1 +1,90 @@
-<p>home works!</p>
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Minhas Tarefas</h1>
+    <button class="btn btn-primary" (click)="novaTarefa()">
+      <i class="bi bi-plus-circle"></i> Adicionar
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="col-12 mb-4">
+      <h2>Tarefas Pendentes</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let tarefa of tarefasPendentes">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span
+                [ngClass]="{
+                  'text-danger': tarefa.prioridade === 'Alta',
+                  'text-warning': tarefa.prioridade === 'Média',
+                  'text-success': tarefa.prioridade === 'Baixa'
+                }"
+              >
+                <i class="bi bi-flag-fill"></i> {{ tarefa.prioridade }}
+              </span>
+              <span class="badge bg-info">{{ tarefa.categoria }}</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ tarefa.nome }}</h5>
+              <p class="card-text">
+                <small class="text-muted">
+                  <i class="bi bi-calendar"></i> {{ tarefa.data | date:'dd/MM/yyyy' }}
+                </small>
+              </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-sm btn-primary" (click)="editarTarefa(tarefa.id)">
+                <i class="bi bi-pencil"></i> Editar
+              </button>
+              <button class="btn btn-sm btn-danger" (click)="excluirTarefa(tarefa.id)">
+                <i class="bi bi-trash"></i> Deletar
+              </button>
+              <button class="btn btn-sm btn-success" (click)="marcarComoConcluida(tarefa.id)">
+                <i class="bi bi-check-circle"></i> Concluir
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" *ngIf="tarefasPendentes.length === 0">
+          <div class="alert alert-info">
+            Não há tarefas pendentes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h2>Tarefas Concluídas</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let tarefa of tarefasConcluidas">
+          <div class="card bg-light">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>
+                <i class="bi bi-flag-fill"></i> {{ tarefa.prioridade }}
+              </span>
+              <span class="badge bg-info">{{ tarefa.categoria }}</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-decoration-line-through">{{ tarefa.nome }}</h5>
+              <p class="card-text">
+                <small class="text-muted">
+                  <i class="bi bi-calendar"></i> {{ tarefa.data | date:'dd/MM/yyyy' }}
+                </small>
+              </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-sm btn-danger" (click)="excluirTarefa(tarefa.id)">
+                <i class="bi bi-trash"></i> Deletar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" *ngIf="tarefasConcluidas.length === 0">
+          <div class="alert alert-info">
+            Não há tarefas concluídas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

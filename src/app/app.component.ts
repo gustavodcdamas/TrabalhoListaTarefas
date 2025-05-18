@@ -4,12 +4,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { TarefaAtualizaComponent } from './pages/tarefa-atualiza/tarefa-atualiza.component';
 import { TarefaNovaComponent } from './pages/tarefa-nova/tarefa-nova.component';
 import { TarefaService } from './services/tarefa.service';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, TarefaAtualizaComponent, TarefaNovaComponent, AsyncPipe, HomeComponent],
+  imports: [RouterOutlet, HeaderComponent, TarefaAtualizaComponent, TarefaNovaComponent, AsyncPipe, HomeComponent,CommonModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITarefa } from '../../models/tarefa.model';
 import { TarefaService } from '../../services/tarefa.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
+  imports: [CommonModule ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   tarefasPendentes: Array<ITarefa> = [];
   tarefasConcluidas: Array<ITarefa> = [];

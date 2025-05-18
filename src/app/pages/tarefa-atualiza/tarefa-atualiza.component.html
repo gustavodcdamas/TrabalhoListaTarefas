@@ -1,1 +1,86 @@
-<p>tarefa-atualiza works!</p>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Editar Tarefa</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="atualizarTarefa()">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome da Tarefa</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            [(ngModel)]="tarefa.nome"
+            name="nome"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="prioridade" class="form-label">Prioridade</label>
+          <select
+            class="form-select"
+            id="prioridade"
+            [(ngModel)]="tarefa.prioridade"
+            name="prioridade"
+            required
+          >
+            <option value="" disabled>Selecione a prioridade</option>
+            <option value="Alta">Alta</option>
+            <option value="Média">Média</option>
+            <option value="Baixa">Baixa</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="data" class="form-label">Data Limite</label>
+          <input
+            type="date"
+            class="form-control"
+            id="data"
+            [(ngModel)]="tarefa.data"
+            name="data"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Categoria</label>
+          <div class="d-flex gap-2">
+            <button
+              type="button"
+              class="btn"
+              [ngClass]="{'btn-primary': tarefa.categoria === 'doméstico', 'btn-outline-primary': tarefa.categoria !== 'doméstico'}"
+              (click)="selecionarCategoria('doméstico')"
+            >
+              Doméstico
+            </button>
+            <button
+              type="button"
+              class="btn"
+              [ngClass]="{'btn-success': tarefa.categoria === 'pessoal', 'btn-outline-success': tarefa.categoria !== 'pessoal'}"
+              (click)="selecionarCategoria('pessoal')"
+            >
+              Pessoal
+            </button>
+            <button
+              type="button"
+              class="btn"
+              [ngClass]="{'btn-info': tarefa.categoria === 'trabalho', 'btn-outline-info': tarefa.categoria !== 'trabalho'}"
+              (click)="selecionarCategoria('trabalho')"
+            >
+              Trabalho
+            </button>
+          </div>
+          <input type="hidden" [(ngModel)]="tarefa.categoria" name="categoria" required>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Atualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
