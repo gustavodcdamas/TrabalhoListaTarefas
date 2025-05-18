@@ -1,0 +1,124 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	/* Remove a margem externa de todos os lados do elemento. */
+	margin: 0;
+  font-family: 'Poppins';
+	/* Remove o espaçamento interno de todos os lados do elemento. */
+	padding: 0;
+  align-items: center;
+  justify-content: center;
+	/* Inclui o preenchimento e a borda na largura e altura. */
+	box-sizing: border-box;
+}
+
+body {
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Quebra de linha quando os itens não couberem na largura da tela. */
+	flex-wrap: wrap;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+
+	/* Margem de todos os lados. */
+	margin: 3px;
+}
+
+header, nav, main, aside, footer {
+	/* Cor do fundo. */
+	background: #a1a1a1;
+
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Margem externa de todos os lados. */
+	margin: 3px;
+}
+
+/* Seletores para formatação individual. */
+
+header {
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+header #logo {
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 0 1 200px;
+
+	/* Cor do fundo. */
+	background: #c9c9c9;
+
+	/* Alinha os itens na vertical. */
+	justify-content: center;
+
+	/* Alinha os itens na horizontal. */
+	align-items: center;
+}
+
+#openMenu, #closeMenu {
+	/* Remove a borda. */
+	border: none;
+
+	/* Remove a cor de fundo. */
+	background: none;
+
+	/* Tamanho da fonte. */
+	font-size: 30px;
+
+	/* Espessura da forte. */
+	font-weight: bold;
+
+	/* Margem ao redor do elemento              */
+	/* (superior, direito, inferior e esquerdo) */
+	padding: 0px 5px 0px 5px;
+
+	/* Muda o cursor do mouse para ponteiro.*/
+	cursor: pointer;
+
+	/* Oculta o elemento. */
+	display: none;
+}
+
+nav {
+	/* Alinha os itens na vertical. */
+	justify-content: flex-end;
+
+	/* Alinha os itens na horizontal. */
+	align-items: center;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
+}
+
+nav a {
+	/* Margem de todos os lados. */
+	margin: 0 3%;
+
+	/* Tamanho da fonte. */
+	font-size: 15pt;
+}
